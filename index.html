@@ -132,13 +132,17 @@ width:100%;
 .gallery-track{
 display:flex;
 gap:18px;
-animation:scrollGallery 10s linear infinite;
+animation:scrollGallery 25s linear infinite;
+width:max-content;
 }
 
 .gallery-track img{
 height:260px;
+width:180px;
+object-fit:cover;
 border-radius:16px;
 box-shadow:0 8px 20px rgba(0,0,0,.15);
+flex-shrink:0;
 }
 
 @keyframes scrollGallery{
@@ -162,10 +166,6 @@ border-radius:16px;
 box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-@keyframes scrollGallery{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
-}
 
 /* MAP */
 
