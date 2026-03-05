@@ -1,58 +1,49 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lubdha & Pawan</title><link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lubdha & Pawan</title><style>
 
 body{
 margin:0;
-font-family:'Playfair Display';
 background:#f4efe6;
+font-family:serif;
 overflow-x:hidden;
 }
 
-/* SOFT GOLD LIGHT */
+/* ENVELOPE SCREEN */
 
-body::before{
-content:"";
+.envelope-screen{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-height:100%;
-background:radial-gradient(circle at center,#ffffff30,#f4efe6);
-z-index:-1;
-}
-
-/* ENVELOPE */
-
-.envelope{
-position:fixed;
-width:100%;
 height:100vh;
-background:#efe6d8;
 display:flex;
 justify-content:center;
 align-items:center;
+flex-direction:column;
+background:#f4efe6;
 z-index:999;
 }
 
-.envelope img{
-width:350px;
-max-width:90%;
+/* ENVELOPE IMAGE */
+
+.envelope{
+width:90%;
+max-width:400px;
 }
 
 /* SEAL */
 
 .seal{
-position:absolute;
-width:120px;
+width:110px;
+margin-top:-110px;
 cursor:pointer;
 transition:0.3s;
 }
 
 .seal:hover{
-transform:scale(1.08);
+transform:scale(1.1);
 }
 
-/* HERO VIDEO */
+/* VIDEO */
 
 .hero video{
 width:100%;
@@ -61,56 +52,38 @@ object-fit:contain;
 background:black;
 }
 
-/* SECTION STYLE */
-
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-h2{
-font-family:'Pinyon Script';
-font-size:48px;
-margin-bottom:30px;
-}
-
 /* EVENTS */
 
-.events{
-display:grid;
-gap:25px;
-padding:10px;
+section{
+padding:60px 20px;
+text-align:center;
 }
 
 .event{
 background:white;
+margin:20px;
 padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* COUNTDOWN */
+/* GALLERY */
 
-.countdown{
-font-size:28px;
-}
-
-/* GALLERY SLIDE */
-
-.gallery-wrapper{
+.gallery{
+display:flex;
+gap:20px;
 overflow:hidden;
 }
 
-.gallery{
+.gallery-track{
 display:flex;
 gap:20px;
 animation:slide 20s linear infinite;
 }
 
 .gallery img{
-height:280px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
+height:250px;
+border-radius:14px;
 }
 
 @keyframes slide{
@@ -120,7 +93,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
 
 }
 
-</style></head><body><!-- ENVELOPE --><div class="envelope" id="envelope"><img src="https://i.imgur.com/wh8VY2L.png"><img src="seal.png" class="seal" onclick="openInvite()"></div><!-- VIDEO --><section class="hero"><video autoplay muted loop playsinline><source src="Wedding_Invite_PawanLubdha.mp4" type="video/mp4"></video></section><!-- EVENTS --><section><h2>Wedding Events</h2><div class="events"><div class="event"><h3>Haldi Ceremony</h3><p>20 March 2026</p><p>3 PM onwards</p></div><div class="event"><h3>Sangeet Night</h3><p>20 March 2026</p><p>7 PM onwards</p></div><div class="event"><h3>Wedding Ceremony</h3><p>21 March 2026</p><p>11 PM onwards</p></div></div></section><!-- COUNTDOWN --><section><h2>Countdown</h2><div class="countdown" id="countdown"></div></section><!-- GALLERY --><section><h2>Gallery</h2><div class="gallery-wrapper"><div class="gallery"><img src="gallery1.jpg">
+</style></head><body><!-- ENVELOPE --><div class="envelope-screen" id="envelope"><img src="envelope.png" class="envelope"><img src="seal.png" class="seal" onclick="openInvite()"><p>Tap the seal to open invitation</p></div><!-- VIDEO --><section class="hero"><video autoplay muted loop playsinline><source src="Wedding_Invite_PawanLubdha.mp4" type="video/mp4"></video></section><!-- EVENTS --><section><h2>Wedding Events</h2><div class="event"><h3>Haldi Ceremony</h3><p>20 March 2026</p><p>3 PM onwards</p></div><div class="event"><h3>Sangeet Night</h3><p>20 March 2026</p><p>7 PM onwards</p></div><div class="event"><h3>Wedding Ceremony</h3><p>21 March 2026</p><p>11 PM onwards</p></div></section><!-- GALLERY --><section><h2>Gallery</h2><div class="gallery"><div class="gallery-track"><img src="gallery1.jpg">
 <img src="gallery2.jpg">
 <img src="gallery3.jpg">
 <img src="gallery4.png">
@@ -135,25 +108,6 @@ function openInvite(){
 document.getElementById("envelope").style.display="none"
 
 }
-
-/* countdown */
-
-var date=new Date("Mar 21 2026 23:00:00").getTime()
-
-setInterval(function(){
-
-var now=new Date().getTime()
-
-var gap=date-now
-
-var days=Math.floor(gap/(1000*60*60*24))
-var hours=Math.floor((gap%(1000*60*60*24))/(1000*60*60))
-var minutes=Math.floor((gap%(1000*60*60))/(1000*60))
-
-document.getElementById("countdown").innerHTML=
-days+" Days "+hours+" Hours "+minutes+" Minutes"
-
-},1000)
 
 </script></body>
 </html>
