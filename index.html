@@ -124,12 +124,27 @@ font-size:20px;
 overflow:hidden;
 }
 
-.gallery{
-display:flex;
-gap:18px;
-animation:slide 20s linear infinite;
+.gallery-wrapper{
+overflow:hidden;
+width:100%;
 }
 
+.gallery-track{
+display:flex;
+gap:18px;
+animation:scrollGallery 12s linear infinite;
+}
+
+.gallery-track img{
+height:260px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+@keyframes scrollGallery{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
 .gallery img{
 height:260px;
 border-radius:16px;
@@ -220,24 +235,32 @@ animation:float linear infinite;
 <div class="time-box" id="hours">0 Hours</div>
 <div class="time-box" id="minutes">0 Minutes</div></div></section><!-- GALLERY --><section><h2>Gallery</h2><div class="gallery-wrapper">
 <div class="gallery"><img src="gallery1.jpg">
+<section>
+
+<h2>Gallery</h2>
+
+<div class="gallery-wrapper">
+
+<div class="gallery-track">
+
+<img src="gallery1.jpg">
 <img src="gallery2.jpg">
 <img src="gallery3.jpg">
 <img src="gallery4.png">
-<img src="gallery5.jpg"><img src="photo1.jpg">
+<img src="gallery5.jpg">
+
+<img src="photo1.jpg">
 <img src="photo2.jpg">
 <img src="photo3.jpg">
 <img src="photo4.jpg">
 <img src="photo5.jpg">
-<img src="photo6.jpg"><img src="gallery1.jpg">
-<img src="gallery2.jpg">
-<img src="gallery3.jpg">
-<img src="gallery4.png">
-<img src="gallery5.jpg"><img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg"></div>
+<img src="photo6.jpg">
+
+</div>
+
+</div>
+
+</section>
 </div></section><!-- LOCATION --><section><h2>Venue Location</h2><div class="map"><iframe
 src="https://maps.google.com/maps?q=Majestic+Palace+Jatra+Link+Road+Nashik&t=&z=15&ie=UTF8&iwloc=&output=embed">
 </iframe></div><br><br>
@@ -314,6 +337,13 @@ p.style.animationDuration=(6+Math.random()*6)+"s"
 document.body.appendChild(p)
 
 }
+
+/* DUPLICATE GALLERY FOR SMOOTH SLIDE */
+
+let track = document.querySelector(".gallery-track")
+track.innerHTML += track.innerHTML
+
+</script>
 
 </script></body>
 </html>
