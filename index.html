@@ -8,20 +8,7 @@ background:#f7f3ed;
 text-align:center;
 }
 
-section{
-padding:60px 20px;
-}
-
-h1{
-font-family:'Pinyon Script';
-font-size:70px;
-margin:10px 0;
-}
-
-h2{
-font-family:'Pinyon Script';
-font-size:45px;
-}
+/* OPEN INVITATION SCREEN */
 
 .envelope-screen{
 position:fixed;
@@ -36,13 +23,27 @@ z-index:999;
 }
 
 .seal{
-background:#b08a4a;
-color:white;
-padding:12px 25px;
-border-radius:40px;
-margin-top:20px;
+width:130px;
 cursor:pointer;
+transition:0.3s;
 }
+
+.seal:hover{
+transform:scale(1.1) rotate(5deg);
+}
+
+h1{
+font-family:'Pinyon Script';
+font-size:70px;
+margin:10px 0;
+}
+
+h2{
+font-family:'Pinyon Script';
+font-size:45px;
+}
+
+/* HERO VIDEO */
 
 .hero{
 position:relative;
@@ -54,17 +55,30 @@ height:100vh;
 object-fit:cover;
 }
 
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.6));
+}
+
 .hero-text{
 position:absolute;
-top:40%;
+top:45%;
 width:100%;
 color:white;
+text-shadow:0 5px 20px rgba(0,0,0,0.9);
 }
+
+/* WELCOME PHOTOS */
 
 .photo-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:10px;
+gap:12px;
 padding:20px;
 }
 
@@ -73,52 +87,102 @@ width:100%;
 border-radius:12px;
 }
 
+/* EVENTS */
+
 .events{
 display:grid;
-gap:25px;
+gap:30px;
+padding:20px;
 }
 
 .event{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 20px rgba(0,0,0,0.08);
+background:linear-gradient(145deg,#ffffff,#f4efe7);
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.12);
+transition:0.3s;
 }
+
+.event:hover{
+transform:translateY(-6px);
+}
+
+.event h3{
+font-size:28px;
+}
+
+/* MAP BUTTON */
 
 .map-btn{
 background:#b08a4a;
 color:white;
-padding:12px 20px;
+padding:14px 25px;
 border-radius:30px;
 text-decoration:none;
+font-size:18px;
 }
 
-.countdown{
+/* COUNTDOWN */
+
+.countdown-box{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+}
+
+.time-box{
+background:#b08a4a;
+color:white;
+padding:20px;
+border-radius:15px;
+min-width:90px;
 font-size:22px;
-margin-top:20px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+padding:20px;
 }
 
 .gallery img{
-width:90%;
-margin:15px;
-border-radius:12px;
+width:100%;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:0.3s;
 }
 
-</style></head><body><div class="envelope-screen" id="openScreen"><h2>Lubdha & Pawan</h2><p>Tap to open invitation</p><div class="seal" onclick="openInvite()">Open Invitation</div></div><section class="hero"><video autoplay muted loop><source src="Wedding_Invite_PawanLubdha.mp4" type="video/mp4"></video><div class="hero-text"><h1>Lubdha & Pawan</h1><p>21 March 2026</p><p>Majestic Palace, Jatra Link Road, Nashik</p></div></section><section><h2>Welcome</h2><p>
-With the blessings of our families,
-we warmly invite you to celebrate our wedding.
-</p><div class="photo-grid"><img src="photo1.jpg">
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+section{
+padding:60px 20px;
+}
+
+</style></head><body><!-- OPEN INVITATION --><div class="envelope-screen" id="openScreen"><h2>Lubdha & Pawan</h2><img src="https://i.imgur.com/Wr3FQ9C.png" class="seal" onclick="openInvite()"><p>Tap the seal to open invitation</p></div><!-- HERO VIDEO --><section class="hero"><video autoplay muted loop><source src="Wedding_Invite_PawanLubdha.mp4" type="video/mp4"></video><div class="hero-text"><h1>Lubdha & Pawan</h1><p>21 March 2026</p><p>Majestic Palace, Jatra Link Road, Nashik</p></div></section><!-- WELCOME --><section><h2>Welcome</h2><p>With the blessings of our families we warmly invite you to celebrate our wedding.</p><div class="photo-grid"><img src="photo1.jpg">
 <img src="photo2.jpg">
 <img src="photo3.jpg">
 <img src="photo4.jpg">
 <img src="photo5.jpg">
-<img src="photo6.jpg"></div></section><section><h2>Wedding Events</h2><div class="events"><div class="event"><h3>Haldi Ceremony</h3><p>20 March 2026</p><p>3 PM onwards</p></div><div class="event"><h3>Sangeet Night</h3><p>20 March 2026</p><p>7 PM onwards</p></div><div class="event"><h3>Wedding Ceremony</h3><p>21 March 2026</p><p>11 PM onwards</p></div></div></section><section><h2>Venue</h2><p>Majestic Palace</p><p>Jatra Link Road, Nashik</p><a class="map-btn" href="https://maps.google.com/?q=Majestic+Palace+Jatra+Link+Road+Nashik" target="_blank">Open in Google Maps
+<img src="photo6.jpg"></div></section><!-- EVENTS --><section><h2>Wedding Events</h2><div class="events"><div class="event"><h3>Haldi Ceremony</h3><p>20 March 2026</p><p>3 PM onwards</p></div><div class="event"><h3>Sangeet Night</h3><p>20 March 2026</p><p>7 PM onwards</p></div><div class="event"><h3>Wedding Ceremony</h3><p>21 March 2026</p><p>11 PM onwards</p></div></div></section><!-- VENUE --><section><h2>Venue</h2><p>Majestic Palace</p><p>Jatra Link Road, Nashik</p><br><a class="map-btn" href="https://maps.google.com/?q=Majestic+Palace+Jatra+Link+Road+Nashik" target="_blank">Open in Google Maps
 
-</a></section><section class="countdown"><h2>Countdown</h2><p id="timer"></p></section><section class="gallery"><h2>Gallery</h2><img src="gallery1.jpg">
+</a></section><!-- COUNTDOWN --><section><h2>Countdown</h2><div class="countdown-box"><div class="time-box">
+<span id="days"></span><br>Days
+</div><div class="time-box">
+<span id="hours"></span><br>Hours
+</div><div class="time-box">
+<span id="minutes"></span><br>Minutes
+</div></div></section><!-- GALLERY --><section><h2>Gallery</h2><div class="gallery"><img src="gallery1.jpg">
 <img src="gallery2.jpg">
 <img src="gallery3.jpg">
-<img src="gallery4.jpg">
-<img src="gallery5.jpg"></section><script>
+<img src="gallery4.png">
+<img src="gallery5.jpg"></div></section><script>
 
 function openInvite(){
 
@@ -135,16 +199,21 @@ var now=new Date().getTime()
 var gap=date-now
 
 var days=Math.floor(gap/(1000*60*60*24))
-
 var hours=Math.floor((gap%(1000*60*60*24))/(1000*60*60))
-
 var minutes=Math.floor((gap%(1000*60*60))/(1000*60))
 
-document.getElementById("timer").innerHTML=
-
-days+" Days "+hours+" Hours "+minutes+" Minutes"
+document.getElementById("days").innerHTML=days
+document.getElementById("hours").innerHTML=hours
+document.getElementById("minutes").innerHTML=minutes
 
 },1000)
+
+</script><!-- FALLING PETALS --><script src="https://cdn.jsdelivr.net/gh/sarfraznawaz2005/petals.js/petals.min.js"></script><script>
+
+new Petals({
+color:'pink',
+count:20
+})
 
 </script></body>
 </html>
