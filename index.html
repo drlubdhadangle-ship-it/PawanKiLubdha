@@ -145,15 +145,26 @@ box-shadow:0 8px 20px rgba(0,0,0,.15);
 0%{transform:translateX(0)}
 100%{transform:translateX(-100%)}
 }
-.gallery img{
+.gallery-wrapper{
+overflow:hidden;
+width:100%;
+}
+
+.gallery-track{
+display:flex;
+gap:18px;
+animation:scrollGallery 15s linear infinite;
+}
+
+.gallery-track img{
 height:260px;
 border-radius:16px;
 box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-@keyframes slide{
+@keyframes scrollGallery{
 0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
+100%{transform:translateX(-100%)}
 }
 
 /* MAP */
@@ -233,8 +244,9 @@ animation:float linear infinite;
 <p>11 PM onwards</p>
 </div></div></section><!-- COUNTDOWN --><section><h2>Countdown</h2><div class="countdown"><div class="time-box" id="days">0 Days</div>
 <div class="time-box" id="hours">0 Hours</div>
-<div class="time-box" id="minutes">0 Minutes</div></div></section><!-- GALLERY --><section><h2>Gallery</h2><div class="gallery-wrapper">
+<div class="time-box" id="minutes">0 Minutes</div></div></section><!-- GALLERY -->
 
+  <!-- GALLERY -->
 <section>
 
 <h2>Gallery</h2>
@@ -259,9 +271,8 @@ animation:float linear infinite;
 </div>
 
 </section>
-
-</section>
-</div></section><!-- LOCATION --><section><h2>Venue Location</h2><div class="map"><iframe
+  
+<!-- LOCATION --><section><h2>Venue Location</h2><div class="map"><iframe
 src="https://maps.google.com/maps?q=Majestic+Palace+Jatra+Link+Road+Nashik&t=&z=15&ie=UTF8&iwloc=&output=embed">
 </iframe></div><br><br>
 
